@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 import { FlexContainer } from '../../layout/FlexContainer'
 
-export const MainButton = styled(FlexContainer)``
+export const MainButton = styled(FlexContainer)`
+    background: ${(props) => props.theme.colors.primary};
+`
 
 export const GhostButton = styled(MainButton)`
     background: white;

@@ -17,4 +17,20 @@ const global = css`
         font-family: 'Poppins';
         color: ${(props) => props.theme.colors.dark};
     }
+    button {
+        background: ${(props) => props.theme.colors.primary};
+        color: ${(props) => props.theme.colors.ligth};
+        font: inherit;
+        font-weight: 700;
+        cursor: pointer;
+        transition: 0.5s;
+        padding: 0.75rem 2rem;
+
+        border-radius: 10rem;
+
+        &:hover {
+            color: ${(props) => props.theme.colors.primary};
+            background: transparent;
+        }
+    }
 `

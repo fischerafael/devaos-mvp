@@ -21,6 +21,7 @@ const global = css`
         background: ${(props) => props.theme.colors.primary};
         color: ${(props) => props.theme.colors.ligth};
         font: inherit;
+        font-size: 0.75rem;
         font-weight: 700;
         cursor: pointer;
         transition: 0.5s;

@@ -10,7 +10,7 @@ const HeroSection = () => {
             <FlexContainer
                 as="section"
                 style={{
-                    minHeight: '85vh',
+                    minHeight: '75vh',
                     flexDirection: 'column',
                     padding: '1rem',
                     maxWidth: '900px'

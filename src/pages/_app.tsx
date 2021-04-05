@@ -1,14 +1,14 @@
-import { ThemeProvider } from "styled-components";
-import { GlobalStyle } from "../external/ui/styles/GlobalStyle";
-import { theme } from "../external/ui/styles/theme";
+import { ThemeProvider } from 'styled-components'
+import { GlobalStyle } from '../external/ui/styles/GlobalStyle'
+import { theme } from '../external/ui/styles/theme'
 
 export default function App({ Component, pageProps }) {
-  return (
-    <>
-      <GlobalStyle />
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </>
-  );
+    return (
+        <>
+            <ThemeProvider theme={theme}>
+                <GlobalStyle />
+                <Component {...pageProps} />
+            </ThemeProvider>
+        </>
+    )
 }

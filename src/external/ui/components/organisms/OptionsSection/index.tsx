@@ -10,7 +10,7 @@ const OptionsSection = () => {
     return (
         <FlexContainer as="section" style={{ flexDirection: 'column' }}>
             <GridContainer
-                as="section"
+                as="nav"
                 style={{
                     padding: '1rem',
                     maxWidth: '900px'

@@ -37,11 +37,11 @@ const global = css`
         }
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 480px) {
         *,
         html,
         body {
-            font-size: 85%;
+            font-size: 95%;
         }
     }
 `

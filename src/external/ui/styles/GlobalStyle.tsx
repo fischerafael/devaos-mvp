@@ -15,8 +15,10 @@ const global = css`
         box-sizing: border-box;
 
         font-family: 'Poppins';
+        font-size: 100%;
         color: ${(props) => props.theme.colors.dark};
     }
+
     button {
         background: ${(props) => props.theme.colors.primary};
         color: ${(props) => props.theme.colors.ligth};
@@ -32,6 +34,14 @@ const global = css`
         &:hover {
             color: ${(props) => props.theme.colors.primary};
             background: transparent;
+        }
+    }
+
+    @media (max-width: 900px) {
+        *,
+        html,
+        body {
+            font-size: 85%;
         }
     }
 `

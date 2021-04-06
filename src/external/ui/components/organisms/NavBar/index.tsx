@@ -2,6 +2,7 @@ import React from 'react'
 import { Text } from '../../../design-system/display/Text'
 import { OutlineButton } from '../../../design-system/entry/Button'
 import { FlexContainer } from '../../../design-system/layout/FlexContainer'
+import CustomLink from '../../molecules/CustomLink'
 
 const NavBar = () => {
     return (
@@ -15,10 +16,17 @@ const NavBar = () => {
                     padding: '1rem'
                 }}
             >
-                <Text as="h1">DEVAOS</Text>
-                <OutlineButton as="button" style={{ maxWidth: '10rem' }}>
-                    Entrar
-                </OutlineButton>
+                <CustomLink href="/">
+                    <Text as="h1" style={{ fontSize: '1rem' }}>
+                        DEVAOS
+                    </Text>
+                </CustomLink>
+
+                <CustomLink href="/login">
+                    <OutlineButton as="button" style={{ maxWidth: '10rem' }}>
+                        Entrar
+                    </OutlineButton>
+                </CustomLink>
             </FlexContainer>
         </FlexContainer>
     )

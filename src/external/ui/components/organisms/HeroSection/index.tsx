@@ -3,6 +3,7 @@ import React from 'react'
 import { Text } from '../../../design-system/display/Text'
 import { MainButton } from '../../../design-system/entry/Button'
 import { FlexContainer } from '../../../design-system/layout/FlexContainer'
+import CustomLink from '../../molecules/CustomLink'
 
 const HeroSection = () => {
     return (
@@ -22,12 +23,14 @@ const HeroSection = () => {
                 <Text as="h2">
                     O ponto de encontro de quem resolveu migrar para tecnologia
                 </Text>
-                <MainButton
-                    as="button"
-                    style={{ marginTop: '2rem', maxWidth: '10rem' }}
-                >
-                    Criar Conta
-                </MainButton>
+                <CustomLink href="/register">
+                    <MainButton
+                        as="button"
+                        style={{ marginTop: '2rem', maxWidth: '10rem' }}
+                    >
+                        Criar Conta
+                    </MainButton>
+                </CustomLink>
             </FlexContainer>
         </FlexContainer>
     )

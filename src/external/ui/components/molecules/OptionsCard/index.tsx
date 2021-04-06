@@ -18,7 +18,8 @@ const OptionsCard = ({ children, title, description }: Props) => {
             style={{
                 padding: '3rem 1rem',
                 flexDirection: 'column',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                position: 'relative'
             }}
         >
             {children}

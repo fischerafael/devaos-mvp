@@ -9,8 +9,8 @@ export const FlexContainer = styled.div<Props>`
     align-items: center;
     justify-content: center;
 
-    background: ${(props) => props.theme.colors.ligth};
-    ${(props) => props.background === 'grey' && grey}
+    /* background: ${(props) => props.theme.colors.ligth};
+    ${(props) => props.background === 'grey' && grey} */
 
     width: 100%;
     height: 100%;

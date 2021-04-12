@@ -3,6 +3,7 @@ import { Text } from '../../../design-system/display/Text'
 import { OutlineButton } from '../../../design-system/entry/Button'
 import { FlexContainer } from '../../../design-system/layout/FlexContainer'
 import CustomLink from '../../molecules/CustomLink'
+import LogoDevaos from '../../molecules/Logo'
 
 const NavBar = () => {
     return (
@@ -17,9 +18,7 @@ const NavBar = () => {
                 }}
             >
                 <CustomLink href="/">
-                    <Text as="h1" style={{ fontSize: '1rem' }}>
-                        DEVAOS
-                    </Text>
+                    <LogoDevaos />
                 </CustomLink>
 
                 <CustomLink href="/login">

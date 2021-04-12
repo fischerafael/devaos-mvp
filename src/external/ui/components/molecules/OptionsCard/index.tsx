@@ -14,12 +14,12 @@ const OptionsCard = ({ children, title, description }: Props) => {
     return (
         <OptionsCardContainer
             as="article"
-            background="grey"
             style={{
                 padding: '3rem 1rem',
                 flexDirection: 'column',
                 cursor: 'pointer',
-                position: 'relative'
+                position: 'relative',
+                background: '#FAFAFA'
             }}
         >
             {children}

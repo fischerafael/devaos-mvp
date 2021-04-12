@@ -1,8 +1,21 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { FlexContainer } from '../../layout/FlexContainer'
 
-export const MainButton = styled(FlexContainer)`
+interface Props {
+    disabled?: boolean
+}
+
+export const MainButton = styled(FlexContainer)<Props>`
     background: ${(props) => props.theme.colors.primary};
+    ${(props) => props.disabled && disabledButton}
+`
+const disabledButton = css`
+    background: #dddddd;
+    &:hover {
+        background: #dddddd;
+        color: white;
+        cursor: not-allowed;
+    }
 `
 
 export const GhostButton = styled(MainButton)`

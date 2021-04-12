@@ -1,6 +1,4 @@
-import React from 'react'
-
-import useForm from '../../../../../hooks/useForm'
+import React, { useEffect, useState } from 'react'
 
 import { FlexContainer } from '../../../../design-system/layout/FlexContainer'
 import { Text } from '../../../../design-system/display/Text'
@@ -8,11 +6,22 @@ import { MainButton } from '../../../../design-system/entry/Button'
 
 import Input from '../../../../design-system/entry/Input'
 import CustomLink from '../../../molecules/CustomLink'
+import useAuth from '../../../../../hooks/useAuth'
 
 const Login = () => {
-    const { data, handleChange } = useForm({ email: '', password: '' })
+    const { data, handleChange, handleLogin } = useAuth({
+        identifier: '',
+        password: ''
+    })
 
-    console.log(data)
+    const [isValid, setValid] = useState(false)
+    useEffect(() => {
+        setValid(false)
+
+        data.identifier.length >= 6 &&
+            data.password.length >= 6 &&
+            setValid(true)
+    }, [data])
 
     return (
         <>
@@ -42,19 +51,26 @@ const Login = () => {
                     >
                         <Input
                             label="Email"
+                            error="6 carácteres no mínimo"
                             type="email"
-                            name="email"
-                            value={data.email}
+                            name="identifier"
+                            value={data.identifier}
                             onChange={handleChange}
                         />
                         <Input
                             label="Senha"
+                            error="6 carácteres no mínimo"
                             type="password"
                             name="password"
                             value={data.password}
                             onChange={handleChange}
                         />
-                        <MainButton as="button" style={{ marginTop: '2rem' }}>
+                        <MainButton
+                            onClick={handleLogin}
+                            disabled={isValid ? false : true}
+                            as="button"
+                            style={{ marginTop: '2rem' }}
+                        >
                             Entrar
                         </MainButton>
                     </FlexContainer>

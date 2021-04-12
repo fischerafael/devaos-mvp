@@ -21,7 +21,12 @@ const NavBar = () => {
                     <LogoDevaos />
                 </CustomLink>
 
-                <CustomLink href="/login">
+                <CustomLink
+                    href="/app/login"
+                    style={{
+                        textDecoration: 'none'
+                    }}
+                >
                     <OutlineButton as="button" style={{ maxWidth: '10rem' }}>
                         Entrar
                     </OutlineButton>

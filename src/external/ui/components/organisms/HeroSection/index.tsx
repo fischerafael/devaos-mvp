@@ -23,7 +23,12 @@ const HeroSection = () => {
                 <Text as="h2">
                     O ponto de encontro de quem resolveu migrar para tecnologia
                 </Text>
-                <CustomLink href="/register">
+                <CustomLink
+                    href="/app/create-account"
+                    style={{
+                        textDecoration: 'none'
+                    }}
+                >
                     <MainButton
                         as="button"
                         style={{ marginTop: '2rem', maxWidth: '10rem' }}

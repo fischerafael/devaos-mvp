@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import useForm from '../../../../../hooks/useForm'
+import useAuth from '../../../../../hooks/useAuth'
 
 import { FlexContainer } from '../../../../design-system/layout/FlexContainer'
 import { Text } from '../../../../design-system/display/Text'
@@ -8,28 +8,15 @@ import { MainButton } from '../../../../design-system/entry/Button'
 
 import Input from '../../../../design-system/entry/Input'
 import CustomLink from '../../../molecules/CustomLink'
-import { httpClient } from '../../../../../services'
 
 const CreateAccount = () => {
-    const { data, handleChange } = useForm({
+    const { data, handleCreateAccount, handleChange } = useAuth({
         email: '',
         password: '',
         username: ''
     })
 
-    const handleCreateAccount = async function (e: any) {
-        e.preventDefault()
-        try {
-            alert('hi')
-            const response = await httpClient.post('/auth/local/register', data)
-            console.log(response)
-        } catch (e) {
-            console.log(e)
-        }
-    }
-
     const [isValid, setValid] = useState(false)
-
     useEffect(() => {
         setValid(false)
 
@@ -106,7 +93,10 @@ const CreateAccount = () => {
                             fontSize: '.75rem'
                         }}
                     >
-                        <Text as="span" style={{ color: '#0070f3' }}>
+                        <Text
+                            as="span"
+                            style={{ color: '#0070f3', marginTop: '1rem' }}
+                        >
                             Já tenho uma conta
                         </Text>
                     </CustomLink>

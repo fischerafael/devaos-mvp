@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from 'react'
-
-import useAuth from '../../../../../hooks/useAuth'
+import { useAuth } from '../../../../../hooks/useAuth'
 
 import { FlexContainer } from '../../../../design-system/layout/FlexContainer'
 import { Text } from '../../../../design-system/display/Text'

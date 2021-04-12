@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+
+import { useAuth } from '../../../../../hooks/useAuth'
 
 import { FlexContainer } from '../../../../design-system/layout/FlexContainer'
 import { Text } from '../../../../design-system/display/Text'
@@ -6,7 +8,6 @@ import { MainButton } from '../../../../design-system/entry/Button'
 
 import Input from '../../../../design-system/entry/Input'
 import CustomLink from '../../../molecules/CustomLink'
-import useAuth from '../../../../../hooks/useAuth'
 
 const Login = () => {
     const { data, handleChange, handleLogin } = useAuth({
@@ -14,8 +15,8 @@ const Login = () => {
         password: ''
     })
 
-    const [isValid, setValid] = useState(false)
-    useEffect(() => {
+    const [isValid, setValid] = React.useState(false)
+    React.useEffect(() => {
         setValid(false)
 
         data.identifier.length >= 6 &&

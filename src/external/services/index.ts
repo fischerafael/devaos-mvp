@@ -1,5 +1,8 @@
 import axios from 'axios'
 
+const PRODUCTION = 'https://devaos-mvp.herokuapp.com'
+const DEV = 'http://localhost:1337'
+
 export const httpClient = axios.create({
-    baseURL: 'http://localhost:1337'
+    baseURL: PRODUCTION
 })

@@ -1,28 +1,21 @@
-import React, { useState } from 'react'
 import { Text } from '../../../../../../design-system/display/Text'
-import Input from '../../../../../../design-system/entry/Input'
+import { MainButton } from '../../../../../../design-system/entry/Button'
 import { FlexContainer } from '../../../../../../design-system/layout/FlexContainer'
+
+import Input from '../../../../../../design-system/entry/Input'
 import CustomLink from '../../../../../molecules/CustomLink'
 
+import { useAddTask } from '../useAddTask'
+
 export const AddTask = () => {
-    const catgoriesList = [
-        { name: 'Frontend', id: '60759a1dc596cfa438f7a8d0' },
-        { name: 'Backend', id: '60759a18c596cfa438f7a8cf' },
-        { name: 'Design', id: '60759a27c596cfa438f7a8d1' }
-    ]
-
-    const [categories, setCategories] = useState([])
-
-    console.log('categorias', categories)
-
-    const handleSelectItem = function (id: string) {
-        const alreadySelected = categories.find((item) => item === id)
-        if (alreadySelected) {
-            setCategories(categories.filter((item) => item !== id))
-            return
-        }
-        setCategories([...categories, id])
-    }
+    const {
+        data,
+        handleChange,
+        categories,
+        handleSelectItem,
+        CATEGORIES_LIST,
+        handleCreateTask
+    } = useAddTask()
 
     return (
         <FlexContainer
@@ -48,22 +41,20 @@ export const AddTask = () => {
                     error="Mínimo 3 caracteres"
                     type="text"
                     id="title"
-                    value={'data.title'}
-                    onChange={() => {}}
-                    onBlur={() => {}}
+                    value={data.title}
+                    onChange={handleChange}
                 />
                 <Input
                     label="Descrição"
                     error="Mínimo 3 caracteres"
                     type="textarea"
-                    id="title"
-                    value={'data.title'}
-                    onChange={() => {}}
-                    onBlur={() => {}}
+                    id="description"
+                    value={data.description}
+                    onChange={handleChange}
                 />
                 <br />
                 <FlexContainer as="div">
-                    {catgoriesList.map((cat) =>
+                    {CATEGORIES_LIST.map((cat) =>
                         categories.includes(cat.id) ? (
                             <Text
                                 key={cat.id}
@@ -99,6 +90,10 @@ export const AddTask = () => {
                         )
                     )}
                 </FlexContainer>
+                <br />
+                <MainButton as="button" onClick={handleCreateTask}>
+                    Adicionar tarefa
+                </MainButton>
             </FlexContainer>
             <CustomLink
                 href="/app/dashboard/tasks"

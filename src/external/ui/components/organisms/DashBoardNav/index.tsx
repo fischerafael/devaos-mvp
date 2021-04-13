@@ -21,12 +21,6 @@ export const DashboardNav = () => {
                 }}
             >
                 <SingleLink
-                    pathname="/app/dashboard"
-                    active={pathname === '/app/dashboard' && true}
-                >
-                    Início
-                </SingleLink>
-                <SingleLink
                     pathname="/app/dashboard/tasks"
                     active={pathname === '/app/dashboard/tasks' && true}
                 >

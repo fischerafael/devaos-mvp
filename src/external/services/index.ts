@@ -4,5 +4,5 @@ const PRODUCTION = 'https://devaos-mvp.herokuapp.com'
 const DEV = 'http://localhost:1337'
 
 export const httpClient = axios.create({
-    baseURL: PRODUCTION
+    baseURL: 'http://localhost:1337'
 })

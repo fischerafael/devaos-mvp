@@ -1,36 +1,44 @@
 import React from 'react'
-import { Text } from '../../../design-system/display/Text'
+
+import { useRouter } from 'next/router'
+
 import { FlexContainer } from '../../../design-system/layout/FlexContainer'
-import CustomLink from '../../molecules/CustomLink'
+import SingleLink from './Links'
 
 export const DashboardNav = () => {
+    const router = useRouter()
+    const pathname = router.pathname
+
     return (
-        <FlexContainer
-            as="nav"
-            style={{
-                padding: '1rem',
-                justifyContent: 'space-between',
-                height: '15vh'
-            }}
-        >
-            <CustomLink
-                href="/app/dashboard"
-                style={{ textDecoration: 'none' }}
+        <FlexContainer as="section">
+            <FlexContainer
+                as="nav"
+                style={{
+                    padding: '1rem',
+                    justifyContent: 'space-between',
+                    height: '15vh',
+                    maxWidth: '900px'
+                }}
             >
-                <Text style={{ fontSize: '.75rem' }}>Início</Text>
-            </CustomLink>
-            <CustomLink
-                href="/app/dashboard"
-                style={{ textDecoration: 'none' }}
-            >
-                <Text style={{ fontSize: '.75rem' }}>Tarefas</Text>
-            </CustomLink>
-            <CustomLink
-                href="/app/dashboard/config"
-                style={{ textDecoration: 'none' }}
-            >
-                <Text style={{ fontSize: '.75rem' }}>Configurações</Text>
-            </CustomLink>
+                <SingleLink
+                    pathname="/app/dashboard"
+                    active={pathname === '/app/dashboard' && true}
+                >
+                    Início
+                </SingleLink>
+                <SingleLink
+                    pathname="/app/dashboard/tasks"
+                    active={pathname === '/app/dashboard/tasks' && true}
+                >
+                    Tarefas
+                </SingleLink>
+                <SingleLink
+                    pathname="/app/dashboard/config"
+                    active={pathname === '/app/dashboard/config' && true}
+                >
+                    Configurações
+                </SingleLink>
+            </FlexContainer>
         </FlexContainer>
     )
 }

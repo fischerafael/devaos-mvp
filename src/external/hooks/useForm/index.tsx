@@ -4,7 +4,7 @@ function useForm<T>(defaultData: T) {
     const [data, setData] = React.useState(defaultData)
 
     function handleChange(e: any) {
-        setData({ ...data, [e.target.getAttribute('name')]: e.target.value })
+        setData({ ...data, [e.target.getAttribute('id')]: e.target.value })
     }
 
     return {

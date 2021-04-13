@@ -54,7 +54,7 @@ const Login = () => {
                             label="Email"
                             error="6 carácteres no mínimo"
                             type="email"
-                            name="identifier"
+                            id="identifier"
                             value={data.identifier}
                             onChange={handleChange}
                         />
@@ -62,7 +62,7 @@ const Login = () => {
                             label="Senha"
                             error="6 carácteres no mínimo"
                             type="password"
-                            name="password"
+                            id="password"
                             value={data.password}
                             onChange={handleChange}
                         />

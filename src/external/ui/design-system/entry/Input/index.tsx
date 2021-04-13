@@ -6,22 +6,28 @@ import { FlexContainer } from '../../layout/FlexContainer'
 interface Props {
     label: string
     error?: string
-    name: string
+    id: string
     type: 'text' | 'password' | 'email'
     value: any
     onChange(value: any): void
+    onBlur?(value: any): void
 }
 
-const Input = ({ label, error, name, type, value, onChange }: Props) => {
+const Input = ({ label, error, id, type, value, onChange, onBlur }: Props) => {
     return (
         <FlexContainer
             as="label"
             style={{
                 flexDirection: 'column',
-                alignItems: 'flex-start'
+                alignItems: 'flex-start',
+                height: '4rem',
+                margin: '0.25rem 0'
             }}
         >
-            <FlexContainer as="div" style={{ justifyContent: 'space-between' }}>
+            <FlexContainer
+                as="div"
+                style={{ justifyContent: 'space-between', height: '1.5rem' }}
+            >
                 <Text
                     as="span"
                     style={{
@@ -47,14 +53,15 @@ const Input = ({ label, error, name, type, value, onChange }: Props) => {
             <FlexContainer
                 as="input"
                 style={{
-                    height: '3rem',
                     padding: '0 1rem',
+                    fontSize: '.75rem',
                     border: 'solid 0.025rem #dbdbdb'
                 }}
                 type={type}
-                name={name}
+                id={id}
                 value={value}
                 onChange={onChange}
+                onBlur={onBlur}
             />
         </FlexContainer>
     )

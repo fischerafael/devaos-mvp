@@ -55,7 +55,7 @@ const CreateAccount = () => {
                             label="Usuário"
                             error="3 carácteres no mínimo"
                             type="text"
-                            name="username"
+                            id="username"
                             value={data.username}
                             onChange={handleChange}
                         />
@@ -63,7 +63,7 @@ const CreateAccount = () => {
                             label="Email"
                             error="6 carácteres no mínimo"
                             type="email"
-                            name="email"
+                            id="email"
                             value={data.email}
                             onChange={handleChange}
                         />
@@ -71,7 +71,7 @@ const CreateAccount = () => {
                             label="Senha"
                             error="6 carácteres no mínimo"
                             type="password"
-                            name="password"
+                            id="password"
                             value={data.password}
                             onChange={handleChange}
                         />

@@ -1,11 +1,12 @@
-import { FlexContainer } from '../../../../design-system/layout/FlexContainer'
+import { DashboardNav } from '../../../organisms/DashBoardNav'
+
 import NavBar from '../../../organisms/NavBar'
 
 const Dashboard = () => {
     return (
         <>
             <NavBar />
-            <FlexContainer>oi</FlexContainer>
+            <DashboardNav />
         </>
     )
 }
